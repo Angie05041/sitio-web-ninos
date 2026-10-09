@@ -101,7 +101,7 @@ body { /* Base  */
     background-color: var(--menta);
     border: none;
     border-radius: 10px; 
-    animation: aparecer 1s ease-out 0.5 both;
+    animation: aparecer 1s ease-out 0.5s both;
 }
 
 .boton-comprar:hover {
@@ -120,5 +120,107 @@ body { /* Base  */
         transform: translateY(0); /*lugar donde lo tenia*/
     }
 }
+
+.que-es {
+    padding: 100px 0 80px; /* cajita de regalo*/
+}
+
+.titulo-seccion {
+    margin-bottom: 25px; 
+    font-size: 24px; 
+    font-weight: 900;
+}
+
+.texto-que-es {
+    max-width: 840px;
+    /*width fija un ancho exacto, que en el celular se saldría de la pantalla
+    max-width pone un límite: si la pantalla es más pequeña, el párrafo se encoge.*/
+    font-size: 16px;
+    line-height: 1.5; /* interlineado*/
+}
+
+.catalogo {
+    padding: 100px 0; 
+    background-color: var(--menta);
+}
+
+.tarjeta {
+    animation: flotar 5s ease-in-out infinite; 
+}
+
+.imagen-producto {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.4s;
+}
+
+.tarjeta:hover .imagen-producto { 
+    /*cuando pase el mouse por la tarjeta → cambia la imagen que está adentro de ella”.
+    Así, aunque pongas el mouse en el nombre o en el botón (no en la imagen), 
+    la imagen igual se mueve, porque estás encima de la tarjeta.*/
+    transform: rotate(15deg) scale(1.1); /*rotate(15deg) gira la imagen 15 grados.
+    scale(1.1) la agranda 10% (1 = tamaño normal).*/
+}
+
+.nombre-producto {
+    margin: 20px 0 16px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.boton-producto {
+    width: 130px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--naranja);
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-producto:hover {
+    background-color: var(--naranja-oscuro);
+    color: var(--blanco);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.reglas {
+    padding: 100px 0;
+    background-image: url("img/bg-grid.png");
+    background-position: left center;
+    background-size: 1100px auto;
+    background-repeat: no-repeat;
+}
+
+.reglas:hover {
+    background-image: url("img/bg-grid2.png");
+}
+
+.texto-reglas {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.foto-reglas {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.foto-reglas:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 
 
