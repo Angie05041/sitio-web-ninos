@@ -1,0 +1,124 @@
+:root { /* es como un guarda variable de colores, letras , tipos de letras y asi
+     para las demas cosas y que se vea en general toda la pagina*/
+    --naranja: #FFBF69; 
+    --naranja-oscuro: #FD8222;
+    --rojo: #FC2E20;
+    --menta: #d4f0ec;
+    --gris: #333333;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+}
+
+body { /* Base  */
+    font-family: 'Montserrat', sans-serif; /* pongo las 2 por si algo, 2 tipos de letra o fuente. */
+    color: var(--negro); /* Digamos este color ya lo guardamos en el :root y la llamamos con var(--) */
+}
+
+.portada { /* traigo la clase portada y como se va a ver normalmente*/
+    min-height: 657px; /* Minimo alto de la portada */
+    background-color: var(--naranja); 
+    background-image: url("img/background.png"); /* back es el fondo en general,entocnes: de la imagen 
+    y la llamamos con url */
+    background-position: right center; /* la imagen pegada a la derecha y centrada en vertical. */
+    background-size: auto 100%; /* la ponemos en todo el alto para que la imagen no se deforme 
+    para queno estemos poniendola a cada rato si modificamos algo diferente.*/
+    background-repeat: no-repeat; /* Que no se repita si no solo aqui en esta portada*/
+    transition: background-color 0.3s; /* el cambio de color al pasar el puntero en medio segundo */
+}
+
+.portada:hover { /* y como se va a ver cuando le pase el puntero por encima pero de la portada, hover 
+    es la subclase dentro de la misma que ya llame yes portada */
+    background-color: var(--rojo); /* como va a cambiar el color a rojo cuando este encima*/
+    background-image: url("img/background2.png"); /* va a parecer esta imagen cuando pase en ese momento */
+    background-position: right center; 
+    background-size: auto 100%;/* es el tamaño de la imagen de fondo. como en la principal */ 
+    
+}
+
+.logo {
+    font-size: 20px; /*tamaño */
+    font-weight: 400; /* grosor:400 → normal ,600 → semi-negrita ,700 → negrita (igual que bold) ,900 → muy gruesa */
+    color: var(--blanco); 
+    text-decoration: none; /* recuerda que como es a o sea enlace, se subraya por defecto entonces si o si 
+    , para quitarle el subrayado*/
+}
+
+.menu { /* para la lista siempre me aparecen unos puntos entonces tengo que quitarlos por eso 
+    tengo que llamar a el menu para quitarle esos puntos con :  */
+    list-style: none; /* para quitarle los puntos que no necesito*/
+}
+
+.menu a {
+    font-weight: 500; /* ya l habiamos visto , grosorletra*/
+    color: var(--blanco); 
+    text-decoration: none; /* como esta dentro de una a , entonces toca quitarle el subrayado*/ 
+    transition: color 0.3s; 
+}
+
+.menu a:hover { 
+    color: var(--negro);
+}
+
+
+.contenido-portada {  
+    /* distancia que quiero el contenido de la portada
+    es espacio por dentro de la caja. Aquí deja 100px de espacio arriba y
+     100px abajo, para que el contenido no quede pegado a los bordes. */
+    padding-top: 100px;
+    padding-bottom: 100px; 
+}
+
+.titulo-portada {
+    font-size: 150px; /* letra pero en tamaño */
+    font-weight: 900; /* grosor */
+    line-height: 1; /* el espacio entre líneas es igual al tamaño de la letra.
+     O sea, si el título ocupa dos líneas, quedan juntitas, sin espacio extra. */ 
+    color: var(--blanco); 
+    animation: aparecer 1s ease-out; /* usa la animación llamada aparecer 
+    (está abajo con la funcion que le di, de keyframes y nombre para que aparezca la animacion),
+     dura 1 segundo y ease-out significa que empieza rápido y termina lento. */
+}
+
+.subtitulo-portada {
+    margin: 40px 0 70px; /* margin es espacio por fuera. Los tres valores 
+    son: arriba 40px, lados 0, abajo 70px.*/
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--blanco);
+    animation: aparecer 1s ease-out 0.5s both; /* aparecer → la misma animación del título.
+    1s → dura 1 segundo.
+    ease-out → empieza rápido, termina lento.
+    0.3s → espera 0.3 segundos antes de empezar. Por eso sale después del título.
+    both → mientras espera, el subtítulo ya está invisible (no aparece y luego desaparece de golpe). 
+    Y cuando termina, se queda visible. */
+}
+
+.boton-comprar {
+    width: 252px; /* ancho fijo */
+    padding: 16px 0; /* padding arriba y abajo , izquierda y derecha*/
+    font-size: 24px; 
+    font-weight: 500;
+    background-color: var(--menta);
+    border: none;
+    border-radius: 10px; 
+    animation: aparecer 1s ease-out 0.5 both;
+}
+
+.boton-comprar:hover {
+    background-color: var(--blanco); /* casi no se ve, pero si esta jaja*/
+}
+
+@keyframes aparecer {  
+    /* es donde defines cómo es una animación. Esta se llama aparecer como la vimos arriba 
+    con la animacion tiene que ir juntas*/
+    from { /* como empieza*/
+        opacity: 0; /* invisible */
+        transform: translateY(40px); /* abajo */
+    }
+    to { /* como termina */
+        opacity: 1; /*visible */
+        transform: translateY(0); /*lugar donde lo tenia*/
+    }
+}
+
+
